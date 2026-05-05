@@ -170,7 +170,7 @@ Or open the Colab demo notebook directly:
 
 | OCT B-scan | Ground Truth | Model Prediction |
 |:---:|:---:|:---:|
-| ![input](results/sample_predictions/input.png) | ![gt](results/sample_predictions/gt.png) | ![pred](results/sample_predictions/pred.png) |
+| ![input](results/sample_predictions/Input.png) | ![gt](results/sample_predictions/GT.png) | ![pred](results/sample_predictions/Pred.png) |
 
 **Colour legend:**
 
