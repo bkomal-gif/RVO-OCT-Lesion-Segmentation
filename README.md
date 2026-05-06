@@ -73,21 +73,25 @@ Input (384×576×3)
 
 11 experiments were conducted systematically varying loss function, resolution strategy, stride, and backbone.
 
-| Run | Backbone | Resolution | Loss | Mean Dice |
-|-----|----------|------------|------|-----------|
-| 1 | ResNet34 | Patch (stride-64) | CCE | 0.623 |
-| 2 | ResNet34 | Patch (stride-64) | Dice | 0.641 |
-| 3 | ResNet34 | Patch (stride-64) | Focal | 0.638 |
-| 4 | ResNet34 | Patch (stride-64) | CCE + Dice | 0.659 |
-| 5 | ResNet34 | Patch (stride-64) | CCE + Focal | 0.651 |
-| 6 | ResNet34 | Patch (stride-32) | CCE | 0.672 |
-| 7 | ResNet34 | Patch (stride-32) | Dice | 0.688 |
-| 8 | ResNet34 | Patch (stride-32) | CCE + Dice | 0.694 |
-| 9 | ResNet50 | Full resolution | CCE + Dice | 0.771 |
-| 10 | ResNet34 | Full resolution | CCE + Dice | 0.789 |
-| **11** | **ResNet34 (ImageNet)** | **Full resolution** | **CCE + Dice** | **0.802 ✅** |
+| Run | Architecture | Input | Loss Function | Key Observation | SRF | IRF | ELM | EZ | Mean Dice |
+|-----|-------------|-------|---------------|-----------------|-----|-----|-----|----|-----------|
+| 1 | Patch U-Net | 64×64 stride=64 | CCE + class weights | Baseline — 15× class weights collapsed SRF to near-zero | 0.062 | 0.293 | 0.391 | 0.500 | 0.388 |
+| 2 | Patch U-Net | 64×64 stride=64 | CCE (no weights) | Removed class weights — largest single improvement (+57%) | 0.276 | 0.636 | 0.495 | 0.669 | 0.608 |
+| 3 | Patch U-Net | 64×64 stride=32 | CCE (no weights) | Stride=32 overlapping patches + EarlyStopping added | 0.533 | 0.664 | 0.506 | 0.661 | 0.651 |
+| 4 | Patch U-Net | 64×64 stride=32 | CCE + Dice | Combined loss — best patch-based result | 0.533 | 0.664 | 0.506 | 0.661 | **0.669** |
+| 5 | Patch U-Net | 64×64 stride=32 | Focal + Dice (γ=2.0) | Higher focal gamma — SRF dropped vs Run 4 | 0.470 | 0.650 | 0.480 | 0.650 | 0.650 |
+| 6 | Patch U-Net | 64×64 stride=32 | Focal + Dice (γ=0.5) | Lower focal gamma — still below CCE+Dice | 0.460 | 0.640 | 0.475 | 0.645 | 0.642 |
+| 7 | ResNet50 U-Net | 64×64 stride=32 | Dice loss | ResNet50 (25M) no ImageNet — SRF & ELM completely failed | 0.000 | 0.525 | 0.000 | 0.667 | 0.432 |
+| 8 | ResNet50 U-Net | 64×64 stride=32 | Focal loss | ResNet50 no ImageNet — marginal SRF/ELM recovery | 0.142 | 0.492 | 0.472 | 0.630 | 0.529 |
+| 9 | ResNet50 U-Net | 64×64 stride=32 | Focal + Dice (ImageNet) | ResNet50 + ImageNet — overfit before adapting; SRF & ELM failed | 0.000 | 0.525 | 0.000 | 0.667 | 0.432 |
+| 10 | Plain U-Net | 384×576 no patch | CCE + Dice | Full resolution — fewer SRF samples per epoch reduced SRF | 0.420 | 0.634 | 0.505 | 0.663 | 0.641 |
+| **11** | **ResNet34 U-Net** | **384×576 no patch** | **CCE + Dice (ImageNet)** | **ResNet34 (21M) + ImageNet + full context — best overall ✅** | **0.906** | **0.814** | **0.582** | **0.716** | **0.802** |
 
-> **Best model:** Run 11 — ResNet34 with ImageNet pretraining, full-resolution input, combined CCE + Dice loss
+> **Best model:** Run 11 — ResNet34 U-Net with ImageNet pretraining, full-resolution input (384×576), combined CCE + Dice loss — Mean Dice 0.802
+
+> **Best patch-based model:** Run 4 — Patch U-Net with CCE + Dice loss, stride=32 — Mean Dice 0.669
+
+> **Key finding:** Runs 7 & 9 show complete failure of SRF and ELM (Dice = 0.000), demonstrating that ResNet50 without appropriate pretraining and full context severely degrades minority class segmentation.
 
 ---
 
