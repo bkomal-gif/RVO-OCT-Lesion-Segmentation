@@ -116,13 +116,6 @@ RVO-OCT-Lesion-Segmentation/
 │       ├── Stage 13 — Evaluation (Dice, mIoU, Confusion Matrix)
 │       └── Stage 14 — Disease classification
 │
-├── src/
-│   ├── model.py                 # U-Net architecture definition
-│   ├── dataset.py               # Data loading and preprocessing
-│   ├── train.py                 # Training loop
-│   ├── inference.py             # Inference and mask generation
-│   └── metrics.py               # Dice score per class
-│
 ├── results/
 │   ├── experiment_log.csv       # All 11 runs summary
 │   └── sample_predictions/      # Visual outputs (image | GT | pred)
