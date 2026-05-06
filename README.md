@@ -6,7 +6,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://tensorflow.org/)
-[![Colab](https://colab.research.google.com/drive/1EgJNlI8H_CrUUxuAjdVa_aKUrWtXZ8Zf#scrollTo=KRgtHwaUw-Wz)](https://colab.research.google.com/)
+[![Colab](https://colab.research.google.com/drive/1EgJNlI8H_CrUUxuAjdVa_aKUrWtXZ8Zf#scrollTo=KRgtHwaUw-Wz)]
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
