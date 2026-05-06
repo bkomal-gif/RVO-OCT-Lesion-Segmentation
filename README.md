@@ -193,7 +193,7 @@ Or open the Colab demo notebook directly:
 
 Capstone project by **Team 10**, Executive Programme for AI in Healthcare, IIT Delhi
 
-Alfred Thomas · Heidrun Zeug · Kiran Kamble · **Baby Komal** · Muneesh Kapoor · Nitika Jesingh · Saptarshi Paul Choudhury · Shivani Sheth · Shuvadeep Ganguly · Sumit Talwar
+ **Baby Komal** · Alfred Thomas · Heidrun Zeug · Kiran Kamble · Muneesh Kapoor · Nitika Jesingh · Saptarshi Paul Choudhury · Shivani Sheth · Shuvadeep Ganguly · Sumit Talwar
 
 ---
 
