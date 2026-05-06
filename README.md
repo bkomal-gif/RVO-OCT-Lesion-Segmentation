@@ -1,8 +1,8 @@
 # 🔬 RVO-OCT-Lesion-Segmentation
 
-![OCT Segmentation Banner](results/sample_predictions/banner.png)
-
 > Automated multi-class lesion segmentation in Retinal Vein Occlusion (RVO) from OCT B-scans using a ResNet34-backbone U-Net
+
+![OCT Segmentation Banner](results/sample_predictions/banner.png)
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://tensorflow.org/)
