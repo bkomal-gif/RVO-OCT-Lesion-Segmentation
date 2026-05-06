@@ -43,6 +43,23 @@ This project implements a **deep learning pipeline for automated multi-class OCT
 | **Platform** | Google Colab Pro |
 
 ---
+## 📦 Dataset
+
+This project uses the **RVO-ME Dataset** publicly available on Kaggle.
+
+| | |
+|---|---|
+| **Source** | [RVO-ME Dataset — Kaggle](https://www.kaggle.com/datasets/gaoweihao/rvo-me-dataset) |
+| **Total B-scans** | 3,012 |
+| **Image dimensions** | 384 × 576 px (greyscale) |
+| **Annotation classes** | 5 — Background, SRF, IRF, ELM, EZ |
+| **Format** | NumPy arrays (`.npy`) |
+| **Access** | Publicly available — Kaggle account required |
+
+> ⚠️ The dataset files (`rvo_images.npy`, `rvo_masks.npy`) are **not included** in this repository due to size (~1.3 GB total). Download directly from the Kaggle link above and place them in your Google Drive at:
+> `/content/drive/MyDrive/RVO-Lesion/Image_Seg/`
+
+---
 
 ## 🏗️ Architecture
 
@@ -205,5 +222,7 @@ Capstone project by **Team 10**, Executive Programme for AI in Healthcare, IIT D
 ## 🙏 Acknowledgements
 
 - IIT Delhi Executive Programme for AI in Healthcare
+- [RVO-ME Dataset](https://www.kaggle.com/datasets/gaoweihao/rvo-me-dataset) 
+  by Gaoweihao on Kaggle — publicly available retinal OCT dataset
 - [segmentation-models](https://github.com/qubvel/segmentation_models) library by Pavel Iakubovskii
 - Google Colab Pro for compute support
