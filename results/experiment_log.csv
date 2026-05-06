@@ -1,0 +1,12 @@
+Run,Architecture,Input,Loss_Function,Key_Change_Observation,SRF,IRF,ELM,EZ,Mean_Dice
+1,Patch U-Net,64x64 stride=64,CCE + class weights,Baseline — 15x class weights collapsed SRF to near-zero,0.062,0.293,0.391,0.500,0.388
+2,Patch U-Net,64x64 stride=64,CCE (no weights),Removed class weights — largest single improvement (+57%),0.276,0.636,0.495,0.669,0.608
+3,Patch U-Net,64x64 stride=32,CCE (no weights),Stride=32 overlapping patches + EarlyStopping added,0.533,0.664,0.506,0.661,0.651
+4,Patch U-Net,64x64 stride=32,CCE + Dice,Combined loss — best patch-based result,0.533,0.664,0.506,0.661,0.669
+5,Patch U-Net,64x64 stride=32,Focal + Dice (gamma=2.0),Higher focal gamma — SRF dropped vs Run 4,0.470,0.650,0.480,0.650,0.650
+6,Patch U-Net,64x64 stride=32,Focal + Dice (gamma=0.5),Lower focal gamma — still below CCE+Dice,0.460,0.640,0.475,0.645,0.642
+7,ResNet50 U-Net,64x64 stride=32,Dice loss,ResNet50 (25M) no ImageNet — SRF & ELM completely failed,0.000,0.525,0.000,0.667,0.432
+8,ResNet50 U-Net,64x64 stride=32,Focal loss,ResNet50 (25M) no ImageNet — marginal SRF/ELM recovery,0.142,0.492,0.472,0.630,0.529
+9,ResNet50 U-Net,64x64 stride=32,Focal + Dice (ImageNet),ResNet50 + ImageNet — overfit before adapting; SRF & ELM failed,0.000,0.525,0.000,0.667,0.432
+10,Plain U-Net,384x576 no patch,CCE + Dice,Full resolution — fewer SRF samples per epoch reduced SRF,0.420,0.634,0.505,0.663,0.641
+11,ResNet34 U-Net,384x576 no patch,CCE + Dice (ImageNet),ResNet34 (21M) + ImageNet + full context — best overall result,0.906,0.814,0.582,0.716,0.802
