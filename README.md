@@ -6,7 +6,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://tensorflow.org/)
-[![Colab](https://colab.research.google.com/drive/1EgJNlI8H_CrUUxuAjdVa_aKUrWtXZ8Zf#scrollTo=KRgtHwaUw-Wz)]
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EgJNlI8H_CrUUxuAjdVa_aKUrWtXZ8Zf#scrollTo=KRgtHwaUw-Wz)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
@@ -160,7 +160,7 @@ model = load_model("resnet34_unet_fullres.keras", compile=False)
 
 Or open the Colab demo notebook directly:
 
-[![Open In Colab](https://colab.research.google.com/drive/1EgJNlI8H_CrUUxuAjdVa_aKUrWtXZ8Zf#scrollTo=KRgtHwaUw-Wz)](https://colab.research.google.com/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EgJNlI8H_CrUUxuAjdVa_aKUrWtXZ8Zf#scrollTo=KRgtHwaUw-Wz)
 
 ---
 
