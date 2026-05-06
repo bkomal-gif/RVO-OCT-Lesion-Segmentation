@@ -154,8 +154,9 @@ BATCH_SIZE = 2
 NUM_CLASSES = 5               # Background, SRF, IRF, ELM, EZ
 ```
 
-```bash
-python src/train.py
+Open the notebook in Colab and run all stages sequentially. The model checkpoint saves automatically to Google Drive at:
+```
+/content/drive/MyDrive/RVO-Lesion/Image_Seg/resnet34_unet_fullres.keras
 ```
 
 ### Inference
