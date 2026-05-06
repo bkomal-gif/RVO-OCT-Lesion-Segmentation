@@ -100,9 +100,21 @@ RVO-OCT-Lesion-Segmentation/
 │   └── sample_images/          # Sample OCT B-scans and ground truth masks
 │
 ├── notebooks/
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_model_training.ipynb
-│   └── 03_inference_demo.ipynb  ← Colab-ready demo
+│   └── Full_resolution_RESNET_34.ipynb   ← Complete end-to-end pipeline
+│       ├── Stage 1  — Imports & setup
+│       ├── Stage 2  — Mount Drive & data checks
+│       ├── Stage 3  — Data loading (mmap_mode='r')
+│       ├── Stage 4  — Configuration
+│       ├── Stage 5  — Train/Validation split
+│       ├── Stage 6  — tf.data pipeline
+│       ├── Stage 7  — ResNet34 U-Net model
+│       ├── Stage 8  — Loss function (CCE + Dice)
+│       ├── Stage 9  — Callbacks
+│       ├── Stage 10 — Training
+│       ├── Stage 11 — Training curves
+│       ├── Stage 12 — Visualisation
+│       ├── Stage 13 — Evaluation (Dice, mIoU, Confusion Matrix)
+│       └── Stage 14 — Disease classification
 │
 ├── src/
 │   ├── model.py                 # U-Net architecture definition
